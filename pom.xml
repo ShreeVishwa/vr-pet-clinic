@@ -43,10 +43,8 @@
     </build>
 
     <scm>
-        <connection>scm:git:https://github.com/ShreeVishwa/vr-pet-clinic.git</connection>
-        <developerConnection>scm:git:https://github.com/ShreeVishwa/vr-pet-clinic.git</developerConnection>
-        <url>https://github.com/ShreeVishwa/vr-pet-clinic</url>
-      <tag>vr-pet-clinic-0.0.1</tag>
+        <developerConnection>scm:git:git@github.com:ShreeVishwa/vr-pet-clinic.git</developerConnection>
+        <tag>vr-pet-clinic-0.0.1</tag>
   </scm>
 
 </project>
