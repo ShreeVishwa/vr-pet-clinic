@@ -1,11 +1,11 @@
 package com.vrlabs.vrpetclinic.services.map;
 
 import com.vrlabs.vrpetclinic.model.Vet;
-import com.vrlabs.vrpetclinic.services.CrudService;
+import com.vrlabs.vrpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
