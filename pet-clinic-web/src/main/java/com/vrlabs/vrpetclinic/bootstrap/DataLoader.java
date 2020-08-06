@@ -1,6 +1,7 @@
 package com.vrlabs.vrpetclinic.bootstrap;
 
 import com.vrlabs.vrpetclinic.model.Owner;
+import com.vrlabs.vrpetclinic.model.Pet;
 import com.vrlabs.vrpetclinic.model.PetType;
 import com.vrlabs.vrpetclinic.model.Vet;
 import com.vrlabs.vrpetclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import com.vrlabs.vrpetclinic.services.PetTypeService;
 import com.vrlabs.vrpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -36,11 +39,29 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michel");
         owner1.setLastName("Weston");
+        owner1.setAddress("123 Bricrail");
+        owner1.setCity("Miami");
+        owner1.setTelephone("1234567890");
+        Pet mikesPet = new Pet();
+        mikesPet.setPetType(savedDogPetType);
+        mikesPet.setOwner(owner1);
+        mikesPet.setBirthDate(LocalDate.now());
+        mikesPet.setName("Rosco");
+        owner1.getPets().add(mikesPet);
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
+        owner2.setAddress("123 Bricrail");
+        owner2.setCity("Miami");
+        owner2.setTelephone("1234567890");
+        Pet fionaCat = new Pet();
+        fionaCat.setName("Just Cat");
+        fionaCat.setOwner(owner2);
+        fionaCat.setBirthDate(LocalDate.now());
+        fionaCat.setPetType(savedCatPetType);
+        owner2.getPets().add(fionaCat);
         ownerService.save(owner2);
 
         System.out.println("Loaded Owner data ......");
